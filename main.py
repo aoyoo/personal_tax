@@ -12,26 +12,20 @@ class tax_level:
 tax_level_list = []
 
 def make_all_tax_level():
-    tax_level_1 = tax_level(36000, 0.03, 0)
-    tax_level_2 = tax_level(144000, 0.10, 2520)
-    tax_level_3 = tax_level(300000, 0.20, 16920)
-    tax_level_4 = tax_level(420000, 0.25, 31920)
-    tax_level_5 = tax_level(660000, 0.30, 52920)
-    tax_level_6 = tax_level(960000, 0.35, 85920)
-    tax_level_7 = tax_level(1000000000, 0.45, 181920)
-    tax_level_list.append(tax_level_1)
-    tax_level_list.append(tax_level_2)
-    tax_level_list.append(tax_level_3)
-    tax_level_list.append(tax_level_4)
-    tax_level_list.append(tax_level_5)
-    tax_level_list.append(tax_level_6)
-    tax_level_list.append(tax_level_7)
+    tax_level_list.append(tax_level(36000, 0.03, 0))
+    tax_level_list.append(tax_level(144000, 0.10, 2520))
+    tax_level_list.append(tax_level(300000, 0.20, 16920))
+    tax_level_list.append(tax_level(420000, 0.25, 31920))
+    tax_level_list.append(tax_level(660000, 0.30, 52920))
+    tax_level_list.append(tax_level(960000, 0.35, 85920))
+    tax_level_list.append(tax_level(1000000000, 0.45, 181920))
 
 def get_tax_level(income):
     for tl in tax_level_list:
         if income < tl.income:
             #print "get_tax_level:", tl.income, tl.rate
             return tl
+    return tax_level_list[-1]
 
 def run(argvs):
     if len(argvs) != 3:
